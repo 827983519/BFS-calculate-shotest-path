@@ -81,6 +81,29 @@ int get_input(int &vertices_num,int &edge_num,int edge[],int src_dst[])
 }
 
 
+/*int main()
+{
+    int vertices_num = 0,edge_num = 0;
+    int edge[MAX];
+    int ret = 1;
+    int src_dst[2];
+
+    memset(edge,0,MAX);
+    
+    while(ret != ERROR)
+    {
+        ret = get_input(vertices_num,edge_num,edge,src_dst);
+    
+        if(ret == PATH)
+        {
+            Graph Adjacency_table(vertices_num,edge_num,edge);
+            //Adjacency_table.print();
+            ret = Adjacency_table.find_shortest_path(src_dst[0],src_dst[1]);
+        }
+        
+    }
+    return 0;
+}*/
 int main()
 {
     int vertices_num = 0,edge_num = 0;
@@ -98,7 +121,9 @@ int main()
         {
             Graph Adjacency_table(vertices_num,edge_num,edge);
             Adjacency_table.print();
-            ret = Adjacency_table.find_shortest_path(src_dst[0],src_dst[1]);
+            Adjacency_table.dfs_print_path(src_dst[0],src_dst[1]);
+            Adjacency_table.dfs_print(src_dst[0]);
+            //Adjacency_table.dfs_non_recursive();
         }
         
     }

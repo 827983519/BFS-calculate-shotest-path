@@ -1,0 +1,1 @@
+/usr/bin/c++  -std=c++11 -Wall   -rdynamic CMakeFiles/a2ece650.dir/assignment2.cpp.o CMakeFiles/a2ece650.dir/Graph.cpp.o  -o a2ece650 

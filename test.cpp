@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <queue>
+#include <stack>
 using namespace std;
 
 int* test(int i)
@@ -27,23 +28,38 @@ void A::print()
     cout << a << " " << b << endl;
 }
 
+void print(stack<int> &a)
+{
+    cout << "check";
+}
+
 int main()
 {   
-    
-/*
-    A a;
-    a.a = 12;
-    a.print();
-    A b(3);
-    b.print();
-    A c(4,5);
-    c.print();*/
-    /*queue<int> myQ;
-    myQ.push(10);
-    int i;
-    myQ.pop();*/
-    string a;
-    getline(cin,a);
-    cout << a[2];
+    stack<int> st;
+    st.push(10);
+    st.push(12);
+    st.push(13);
+    st.push(4);
+    int i = 0;
+    int st_num = 0;
+    int tem[100];
+
+     while(st.empty() != true)
+    {
+        st.top() = tem[st_num];
+        st.pop();
+        st_num++;
+
+    }
+    cout << "st_num:" << st_num;
+    for(i = st_num - 1;i >= 0;i--)
+    {
+        cout << "i: " << i << endl;
+        cout << tem[i];
+        if(i != 0)
+        cout << " -> ";
+        st.push(tem[i]);
+    }
+        
     return 0;
 }
